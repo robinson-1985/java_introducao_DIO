@@ -1,0 +1,54 @@
+                   CONSTRUTORES
+
+Podemos entender o termo construtor no sentido literal, afinal vamos construir um 
+objeto.
+
+Por meio de um construtor, criamos um objeto baseado em uma Classe e assim o 
+alocamos em memória. 
+
+Ao criarmos um objeto dizemos que estamos instanciando um objeto. 
+
+Exemplo 1:
+
+public class Pessoa {
+    
+    private String nome;
+    
+    public Pessoa(){
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome; 
+    }
+}
+
+Exemplo 2:
+
+public class Pessoa {
+    
+    private String nome;
+    
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome; 
+    }
+}
+
+Esse exemplo que acabamos de ver é o exemplo mais comum quando começamos a estudar
+construtores em Java.
+
+E para instanciar esse classe (criar um objeto dela) fazemos o seguinte:
+
+Pessoa pessoa = new Pessoa();
+
+
+
+
+

@@ -1,0 +1,15 @@
+Laços, Condicionais e Operadores.
+
+IF e IF ternário 
+
+FOR 
+
+While e Do/While
+
+Operadores: 
+
+            Igualdade
+            Lógicos
+            Incrementos
+            Matemáticos
+            Relacionais

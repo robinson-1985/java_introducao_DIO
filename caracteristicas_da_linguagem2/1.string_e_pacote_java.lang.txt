@@ -1,0 +1,5 @@
+STRINGS
+
+É uma sequência de caracteres;
+
+Pacote java.lang;

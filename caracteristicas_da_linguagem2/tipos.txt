@@ -1,0 +1,106 @@
+                        PRIMITIVOS
+
+Não aceitam NULL
+Possuem valores default.
+
+Os tipos primitivos são boolean, byte, char, short, int, long, float e double. 
+Uma variável de tipo primitivo armazena exatamente um valor de seu tipo declarado 
+por vez. Quando um outro valor é atribuído a uma dessas variáveis, seu valor anterior 
+é substituído.
+
+byte: 1 byte (8 bits, de -128 à 127)
+
+short: 2 bytes (16 bits, de -32.768 à 32.767)
+
+char: 2 bytes (16 bits, de 0 à 65.535 (somente positivos))
+
+int: 4 bytes (32 bits, de -2.147.483.648 à 2.147.483.647)
+
+long: 8 bytes (64 bits, de 9.223.372.036.854.775.808 à -9.223.372.036.854.775.807)
+
+float: 4 bytes (32 bits, de +/-1.4 * 10⁴⁵ à +/-3.4028235 * 10³⁸)
+
+double: 64 bytes (64 bits, de +/-4.9 à +/-1.7976931348623147 * 10³⁰⁸)
+
+                        WRAPPERS
+
+São objetos que representam os tipos primitivos do java; e consegue colocar null;
+
+Wrappers vem do verbo inglês “wrap” que significa envolver. Eles são um nome adicional
+ao padrão de projeto Decorator. Tem como principal função “envolver coisas” adicionando 
+funcionalidades à ela.
+
+O Java conta com diversos Wrappers que adicionam funcionalidades a outras classes ou 
+tipos primitivos, um exemplo dele é o Integer, que é o Wrapper do tipo primitivo int. 
+Que tipo de funcionalidade você pode executar tendo apenas uma variável definida como 
+“int”? Nenhuma, a não ser atribuir valores, pois int é um tipo primitivo e não possuí 
+métodos.
+
+O Java possui oito wrappers para tipos primitivos que adicionam a funcionalidade de
+ tratar tipos primitivos como classes. Quando você faz um:
+
+Integer i = Integer.valueOf(2);
+
+Você está criando uma classe, que "envolve" o número 2 (primitivo) e adiciona métodos 
+como intValue() nele. Você ainda ganha a funcionalidade de trabalhar com o número 2 
+como se ele fosse um objeto. O Java (a partir da versão 5) é inteligente o suficiente 
+para criar ou desfazer wrappers de tipo primitivo automaticamente (Autoboxing), de tão
+útil e comum que é essa prática.
+
+                                Auto-boxing 
+
+Autoboxing com Wrappers
+Você já deve ter se imagine que como Wrapper é um Objeto você deve sempre passar um 
+tipo primitivo para criar um Wrapper especifico daquele tipo primitivo.
+
+Exemplo de Criando um Wrapper:
+
+Integer soma = new Integer(10);
+
+                                    Unboxing
+
+Unboxing Conversion
+O Unboxing Conversion é quando você deseja fazer o inverso do que foi descrito acima 
+, ou seja, deseja converter um objeto para um tipo primitivo. 
+
+Exemplos de Unboxing Conversion
+
+boolean a = new Boolean(“True”);
+char c = new Character(‘c’);
+byte b = new Byte(“1”);
+float f = new Float(1.0f);
+
+                        NÃO PRIMITIVOS
+
+String; Number; Object; Qualquer outros objetos. 
+
+Objetos: Um objeto é um elemento computacional que representa, no domínio da solução, 
+alguma entidade (abstrata ou concreta) do domínio de interesse do problema sob análise. 
+Objetos similares são agrupados em classes. No paradigma de orientação a objetos, tudo 
+pode ser potencialmente representado como um objeto.
+
+                        TIPAGEM FORTE E ESTÁTICA
+
+Forte e estática;
+
+Uma tipagem estática significa que os tipos das variáveis são verificados em tempo de 
+compilação. 
+
+Tipagem forte significa que uma vez atribuído o tipo não é possível mudá-lo. Por 
+exemplo:
+
+se colocarmos String texto = "meu teste", e tentarmos adicionar um número vai dar erro.
+
+texto = 1000; - ERROR
+
+O que é inferência? Tipo inferido?
+
+Significa que conseguimos criar variáveis sem precisar de forma explicíta falarmos 
+o tipo. Utilizamos para isto a palavra reservada var.
+
+var - Inferência de tipo.
+
+Ex: var texto = "O número é: ";
+
+
+

@@ -1,0 +1,93 @@
+                        INTERFACES
+
+MÉTODOS ABSTRATOS
+
+    Devem ser implementados por todos;
+    Novos métodos quebram as implementações;
+
+MÉTODO DEFAULT
+
+    São herdados a todos que implementam;
+    Novos métodos não quebram as implementações;
+
+HERANÇA MÚLTIPLA**
+
+Heranças Múltiplas Gerais
+Podemos usar o que foi dito acima para ver como fornecer heranças múltiplas gerais. 
+A diferença aqui é que talvez não sejamos capazes de designar uma das classes para 
+ser um mixin. No caso geral, as duas classes são pré-definidas e não precisam de 
+serviços uma da outra. Isso significa que a interface MRequires não é necessária. 
+No entanto, ainda precisamos definir uma interface, uma vez que o Java não nos 
+permite misturar duas classes juntas.
+
+Se tivéssemos o luxo de designar pelo menos uma dessas classes, então poderíamos agir
+como antes, tratando cada classe como o mixin e definindo a interface que ele irá
+implementar. Caso contrário, precisaríamos fazer um pouco mais. Suponha que gostaríamos
+de misturar a classe Parent da seção anterior com a classe Other definida abaixo:
+
+Class Other
+{	public Other(int value) { ... }
+
+	public void whatever()
+	{...
+	}
+}
+
+Como o Java irá permitir a extensão de apenas uma classe, precisamos definir uma 
+interface que declare os recursos públicos da outra. Faremos isso para facilitar 
+nossa vida, apesar de que você pode escolher fazer o próximo passo para a classe 
+de menor importância, e cujos métodos serão chamados menos frequentemente. Aqui 
+iremos definir uma interface para fornecer os métodos públicos da classe Other.
+
+Interface OtherInterface
+{	void whatever();
+}
+
+Podemos agora construir uma sub-classe da Other ao implementar essa nova interface 
+e fornecer quaisquer construtores necessários (que não são herdados).
+
+class OtherChild extends Other implements OtherInterface
+{	public OtherChild (int value){ super(value); }
+}
+
+Se tivéssemos a liberdade de modificar a classe Other, poderíamos evitar a classe 
+OtherChild e ter apenas a Other implementando essa nova interface.
+
+Essa nova classe é como se fosse uma Other, mas ela anuncia que implementa a 
+OtherInterface. A partir daqui, podemos proceder como no caso mixin, estendendo 
+a classe Parent, implementando a OtherInterface e criando um novo objeto OtherChild 
+para o qual delegaremos as mensagens definidas na OtherInterface.
+
+Class ParentChild extends Parent implements OtherInterface
+{	public ParentChild(...) { child = new OtherChild(...); ... }
+
+	public void whatever() { child.whatever(); }
+
+	private final OtherInterface child;
+}
+
+Portanto, nessa classe nós juntamos as implementações de duas classes Other, Parent
+e Other, sem modificar nenhuma das classes. Isso é herança múltipla geral. No Java, 
+precisamos definir e implementar as interfaces, e usar a delegação para um objeto de 
+uma das classes para conseguir isso.
+
+Conclusão
+Heranças múltiplas são raramente necessárias. O fato de elas serem um pouco estranhas 
+de atingir no Java não é uma desvantagem, pois isso pode te desencorajar a usá-las nos 
+casos em que soluções melhores estão disponíveis. No entanto, você deve estar ciente de 
+que extensões do Java não são necessárias para atingir o uso da maioria dos recursos 
+que parecem faltar ao Java. Pelo contrário, o Java é uma linguagem boa e completa, 
+que suporta os tipos de coisas que os desenvolvedores precisam. Só que é preciso 
+habilidade para entender como alcançar alguns dos idiomas menos utilizados, como as 
+heranças múltilpas.
+
+ENUMS
+
+-Basicamente são dicionários de dados imutável;
+-Não é permitido criar novas instâncias;
+-O condutor é sempre declarado como private;  
+- Por convenção, por serem objetos constantes e imutáveis (static final), os nomes são 
+MAIÚSCULOS.
+
+
+

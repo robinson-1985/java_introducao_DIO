@@ -1,0 +1,36 @@
+Utilizando a linha de comando abra um arquivo mkdir alias
+
+Abra um arquivo no Vim
+
+Faça o código. 
+
+Exemplo: 
+
+public class Hello{ 
+
+	public static void main(String[] args) {
+	
+		System.out.println("Hello!");
+	
+	}
+
+}
+
+
+Salve
+
+Volte para o terminal 
+
+Dentro da pasta criada anteriomente faça o comando javac alias.java
+
+O código será compilado 
+
+Dê um ll, e vai aparecer o alias.class 
+
+Insira o comando Java alias
+
+Aparecerá a mensagem compilada. 
+
+Se der uma cat alias.java irá aparecer o código. 
+
+Porém, se der um cat alias.class não é possível ler o código porque está bytecode.

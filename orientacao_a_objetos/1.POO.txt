@@ -1,0 +1,103 @@
+Paradigma Orientado a Objetos.
+
+"A programação Orientada a Objetos impõem disciplina sobre a tranferẽncia indireta
+do controle" (Robert "Uncle Bob" Martin) no livro Arquitetura Limpa.
+
+"... a pilha de chamadas funções... poderia ser movida para HEAP (área de memória não 
+necessariamente ordenada - diferente da stack) possibilitando que as variáveis locais
+declaradas por uma função existissem muito depois que a função retornasse..."
+
+"A diferença entre um Código Procedural e um O.O é bem simples. Em códigos procedurais(...)
+escolher o melhor algoritmo é mais importante(...) Já em linguagens O.O(...) pensar 
+no projeto de classes (...) como se encaixam (...) e como serão estendidas é o que 
+mais importa." Maurício Aniche, livro Orientação a Objetos e SOLID para Ninjas. 
+
+Classe 
+
+Vamos entender uma classe como um modelo a ser seguido.
+
+Uma classe vai funcionar como uma espécie de molde que nos servirá como base para 
+construir algo. 
+
+Por exemplo. Quando pensamos em construir uma casa, nós fazemos uma planta baixa. 
+Ela será o modelo que utilizaremos para construir algo concreto. 
+As classes funcionam de forma parecida. 
+
+Vamos a um exemplo prático: 
+
+public class Pessoa {
+
+    private String name = "Marco";
+
+    public String getNomes() { 
+        return nome;
+    }
+}
+
+Objeto
+
+Agora que entendemos que temos um modelo que podemos seguir. O que podemos fazer com 
+esse modelo?
+
+Bom... Nós fizemos a analogia da casa, certo? Depois de termos a planta baixa, nós 
+começamos a construir.
+
+E o resultado do que nós construímos, vamos chamar de objeto. 
+
+Quando nós utilizamos a nossa classe Pessoa - mostrada no código anterior - para criar
+um objeto, nós diremos que estamos instanciando um objeto da classe Pessoa. 
+
+E esse termo é bem simples de entender. O que acontece é que podemos criar vários
+objetos de uma mesma classe, ou seja, várias instâncias de objetos.                       
+
+
+Exemplo:
+
+public class ExemploPesoa {
+
+    public static void main(String[] args) {
+
+        Pessoa pessoa = new Pessoa();
+
+        System.out.println(pessoa.getNome());
+        // Robinson
+    }
+}
+
+
+                          ATRIBUTOS
+
+Agora vamos pensar no que nos definimos como nome. Foi tão intuitivo nós pensarmos que 
+uma pessoa teria um nome que nem demos importância a ele.
+
+O nome é uma característica de uma Pessoa e pode ser diferente de pessoa para pessoa. 
+
+O nome é um atributo da pessoa. 
+
+                            
+                            MÉTODOS
+
+Um apessoa pode ter ações. Por exemplo, uma pessoa pode falar.
+
+Pensando em um cenário mais específico, uma pessoa pode fala o seu nome.
+
+As ações que nós definimos que uma classe pode ter, nós chamamos de métodos. 
+
+Exemplo:
+
+public class ExemploMetodos {
+    public static void main(String[] args) {
+        Pessoa pessoa = new Pessoa();
+
+        System.out.println(pessoa.falarMeuProprioNome());
+        //Olá, meu nome é Robinson
+    }
+}
+
+
+
+
+
+
+
+                                                                       

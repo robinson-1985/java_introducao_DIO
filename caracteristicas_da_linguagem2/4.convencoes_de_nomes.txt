@@ -1,0 +1,23 @@
+Nomes de Classes - a primeira letra tem que ser maiúscula e as demais minúsculas.
+Exemplo - String. 
+          StringBuilder.
+
+Nomes de Métodos - são sempre minúsculas.
+
+Exemplo: verifica. 
+
+- Agora se tiver nome composto tem que ser feito assim:
+
+private static boolean verificaComFiltro(Integer numero)
+return false;
+
+Nomes de Variáveis - sempre as palavras serão simples
+
+Exemplo: letra = "A"
+         numero = 1 
+
+Não se coloca por regência números com letras nas variáveis: Exemplo - letra1
+Também caracteres especiais não se coloca. 
+Sempre começa com minúsculas
+Uso do var é opcional. 
+
