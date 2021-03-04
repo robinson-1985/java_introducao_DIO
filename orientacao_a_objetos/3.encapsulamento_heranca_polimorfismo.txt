@@ -1,0 +1,60 @@
+                    ENCAPSULAMENTO
+
+Mais uma vez vamos entender o tempo que estamos trabalhando ao pé da letra.
+
+Quando falamos de encapsulamento, estamos falando efetivamente em proteger alguma
+informação de alguma forma, ou seja, com uma cápsula.
+
+Vamos ver como podemos trabalhar com o encapsulamento nos nossos exemplos anteriores 
+da Classe Pessoa.
+
+Na nossa classe, vamos manipular basicamente atributos:
+
+- Nome;
+- Data Nascimento.
+
+Abaixo, não é uma boa prática porque deixa desprotegidas as informações:
+
+public classe Pessoa {
+
+    public String nome;
+    public LocalDate Nascimento;
+
+}
+
+O que queremos então?
+
+Garantirmos a nossa implementação e que o acesso a determinados dados estão realmente 
+protegidos do acesso externo.
+
+                            ENCAPSULAMENTO
+
+Mas, afinal o que queremos?
+
+Para esse exemplo específico:
+
+- Queremos que o nome possa seja alterado.
+Vamos pensar que uma pessoa pode casar e mudar seu nome;
+
+-Não queremos alterar a data de nascimento.
+A pessoa nasce com ela e não pode mudar;
+
+-Queremos de alguma forma retornar a idade da pessoa.
+
+public class Exemplo001 {
+
+    public static void main(String[] args) {
+
+        Pessoa eu = new Pessoa("Robinson", 07, 05, 1985);
+
+        System.out.printl(eu.get.Nome());
+        System.out.printl(eu.getDataNascimento());
+        System.out.printl(eu.calculaidade());
+
+        eu.setNome("Robinson Dias");
+
+        System.out.printl(eu.getNome());
+    }
+}
+
+
