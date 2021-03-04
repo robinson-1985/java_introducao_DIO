@@ -48,7 +48,70 @@ E para instanciar esse classe (criar um objeto dela) fazemos o seguinte:
 
 Pessoa pessoa = new Pessoa();
 
+Também podemos criar construtores parametrizados 
+
+Dessa forma, conseguimos definir um contrato que sempre será obrigatório passar 
+alguma informar a hora de instanciar a classe.
+
+Nesse exemplo temos dois construtores. Um com passagem de parãmetro e outro sem.
+
+Isso garante que possamos instanciar das duas maneiras.
+
+public class Pessoa {
+
+    public Pessoa() {
+}
+
+    public Pessoa(String nome){
+        this.nome = nome;
+    }
+
+    private String nome;
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+}
+
+// instanciando com passagem de parâmetro
+Pessoa pessoa = new Pessoa("Marco");
 
 
 
+// instanciando sem passagem de parâmetro
+Pessoa pessoa = new Pessoa();
 
+Já quando definimos nossa class dessa forma, se tentarmos instanciar a classe sem 
+passar algum parâmetro no construtor, tomaremos erro em tempo de compilação.
+
+public class Pessoa {
+
+    public Pessoa() {
+}
+
+    public Pessoa(String nome){
+        this.nome = nome;
+    }
+
+    private String nome;
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+}
+
+E existe um destrutor?
+
+Em Java não existe o conceito de destrutor explicíto;
+
+Quando instanciamos estamos alocando o objeto na memória.
+
+Desalocar esse objeto fica por conta do GC (Garbage Colecttion).
