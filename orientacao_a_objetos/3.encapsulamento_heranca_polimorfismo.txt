@@ -27,9 +27,7 @@ O que queremos então?
 Garantirmos a nossa implementação e que o acesso a determinados dados estão realmente 
 protegidos do acesso externo.
 
-                            ENCAPSULAMENTO
-
-Mas, afinal o que queremos?
+                Mas, afinal o que queremos?
 
 Para esse exemplo específico:
 
@@ -56,5 +54,7 @@ public class Exemplo001 {
         System.out.printl(eu.getNome());
     }
 }
+
+
 
 
