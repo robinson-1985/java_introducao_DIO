@@ -55,6 +55,117 @@ public class Exemplo001 {
     }
 }
 
+- Defino meu nome e minha data de nascimento no contrato;
+- Consigo mudar meu nome posteriormente;
+- Consigo ler meu nome a qualquer momento;
+- Consigo apenas ler minha data de nascimento;
+- Consigo calcular quantos anos eu tenho sem precisar conhecer a implementação.
+
+Ex:
+
+public class Exemplo001 {
+
+    public static void main(String[] args) {
+
+        Pessoa eu = new Pessoa( "Marco", 19, 05, 1990);
+
+        System.out.println(eu.getNome());
+        System.out.println(eu.getDataNascimento());
+        System.out.println(eu.calculaIdade());
+
+        eu.setNome("Marco Paulo");
+
+        System.out.println(eu.getNome());
+
+    }
+}
+
+                    HERANÇA
+
+Como o próprio nome já diz, essa é a capacidade de uma Classe herdar o 
+comportamento de outra.
+
+Ex: vamos pensar em um cenário onde queremos modelar um veículo.
+
+public class Veiculo {
+
+    private String modelo;
+    private String marca;
+
+}
+
+Agora, eu quero colocar a quantidade de portas para o caso de carros e as 
+cilindradas em casos de motocicletas.
+
+Ex: o exemplo abaixo não pode ocorrrer!!!! NÃO PODE
+
+public class Veiculo {
+
+    private String modelo;
+    private String marca;
+    private int quantidadeDePortas;
+    private String cilindradas;
+
+}
+
+Vamos para os exemplos de Herança que pode ser trabalhado:
+
+public class Veiculo {
+
+    private String modelo;
+    private String marca;
+
+}
+
+Aí as classes herdam!!!!!!! =>>
+
+public class Carro extends Veiculo {
+
+    private int quantidadeDePortas;
+
+}
+
+public class Motocicleta extends Veiculo {
+
+    private String cilindradas;
+
+}
+
+Depois de definir os getters e setters ==>>
+
+public class Exemplo001 {
+
+    public static void main(String[] args) {
+
+        Carro carro = new Carro();
+        carro.setMarca("Nissan");
+        carro.setModelo("March");
+        carro.setQuantidadeDePortas(4);
+        
+        Moto mot = new Moto();
+        moto.setMarca("Ducati");
+        moto.setModelo("Street Fighter");
+        moto.setCilindradas("850");
+
+    }
+}
+
+Também aproveitams comportamentos. Neste cenário, temos o método acelerar() na 
+classe veiculo.
+
+public static void main(Strings[] args) {
+
+    Carro carro = new Carro();
+    carro.acelera();
+
+    Motocicleta moto = new Motocicleta();
+    moto.acelera();
+
+}
+
+
+
+
 
 
 
