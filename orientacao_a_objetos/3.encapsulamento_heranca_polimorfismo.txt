@@ -163,6 +163,133 @@ public static void main(Strings[] args) {
 
 }
 
+                HERANÇA VERSUS COMPOSIÇÃO 
+
+Existe um vasto e antigo debate em relação a utilização de herança. Algumas 
+bibliografias inclusive defendem que ela nunca deve ser utilizada. 
+
+E o grande problema tem relação com o noso tópico anterior: o encapsulamento.
+
+A subclasse necesita conhecer, em muitos casos, a implementação da suuperclasse, 
+o que cria um acoplamento e quebra a nossa premissa bbásica do isolamento que 
+vimos no encapsulamento.
+
+                        POLIMORFISMO
+
+Quando falamos em herança, o verbo ser é mandatório na noss forma de falar 
+sobre a classe. 
+
+Entendemos, portanto, que um carro é um veículo e uma motocicleta também é 
+um veículo. 
+
+Agora no nosso exemplo, nós queremos colocar mais uma caraterística e uma ação 
+que podem ser comuns aos dois, mas com algumas peculiaridades.
+
+Agora vamos calcular o valor aproximado do IPVA de nosso diferentes tipos de 
+veículos. 
+
+Tanto carros qiantos motos pagam IPVA! E o cálculo é baseado no valor venal do 
+veículo.
+
+Portanto, a primeira conclusão que chegamos é que temos uma característica nova
+na nossa Classe de Veículos, agora temos o valor venal, então:
+
+public class Veiculo {
+
+    private String modelo;
+    private String marca;
+
+    public double valorVenal;
+
+}
+
+Mas, precisamos calcular a nossa precisão de imposto.
+
+Vamos partir do príncipio que (valores hipotéticos):
+
+- Um veículo teria que pagar, no mínimo, 0.01% do valor venal de IPVA;
+
+- Um carro teria que pagar, no mínimo, 0.07% do valor venal de IPVA;
+
+- Uma moto teria que pagar, no mínimo, 0.03% do valor venal de IPVA.
+
+Para isso precisaremos definir implementações diferentes de acordo com as classe
+que estamos trablhando.
+
+É onde entraria o POLIMORFISMO.
+
+Ele nos garantirá a capacidade de um objeto ser referenciado de múltiplas formas.
+
+O Java será capaz de identificar qual objeto foi instanciado e, assim, escolher 
+qual método será utilizado.
+
+Vamos ver como ficaria:
+
+public class Veiculo {
+
+    ...
+
+    private double valorVenal;
+
+    ...
+
+    public double calculaImposto(){
+        return this.valorVenal * 0.01;
+    }
+
+}
+
+
+public class Motocicleta extends Veiculo {
+
+    ...
+
+    public double calculaImposto(){
+        return this.valorVenal * 0.03;
+    }
+
+}
+
+public class Carro extends Veiculo {
+
+    ...
+
+    public double calculaImposto(){
+        return this.valorVenal * 0.07;
+    }
+
+}
+
+public static void main(String[] args) {
+
+    Veiculo generico = new Veiculo();
+    generico.setValorVenal(1000.0);
+    System.out.println(generico.calculaImposto()); // 10.0
+
+    Veiculo carro = new Carro();
+    generico.setValorVenal(1000.0);
+    System.out.println(generico.calculaImposto()); // 70.0
+
+    Veiculo moto = new Motocicleta();
+    generico.setValorVenal(1000.0);
+    System.out.println(generico.calculaImposto()); // 30.0
+}
+
+
+                            Exercício final
+                            
+Vamos pensar em um cenário onde temos
+Funcionários. Esses funcionários podem ser: Gerente,
+Supervisor e Atendente.
+Cada tipo de funcionário desses tem políticas
+diferentes de impostos:
+- Gerente paga 0,1% do salário;
+- Supervisor paga 0,05% do salário;
+- Atendente paga 0,01% do salário.
+Monte um modelo que atenda esse cenário.
+
+
+
 
 
 

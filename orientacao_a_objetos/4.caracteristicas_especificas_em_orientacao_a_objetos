@@ -1,0 +1,7 @@
+                THIS
+
+Quando estamos trabalhando com o termo this, no Java, estamos, na verdade, 
+fazendo uma auto referência.
+
+Esse conceito faz mais sentido quando estamos falando de construtores e métodos, 
+exemplo:
