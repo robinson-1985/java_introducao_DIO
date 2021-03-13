@@ -1,0 +1,135 @@
+                Interface Segregation Principle.
+
+Princípio da Segregação da Interface — Uma classe não deve ser forçada a 
+implementar interfaces e métodos que não irão utilizar.
+
+Esse princípio basicamente diz que é melhor criar interfaces mais específicas
+ao invés de termos uma única interface genérica.
+
+Vamos ver o ISP na prática através de códigos:
+
+Em um cenário fictício para criação de um game de animais, teremos algumas 
+aves que serão tratadas como personagens dentro do jogo. Sendo assim, 
+criaremos uma interface Aves para abstrair o comportamento desses animais, 
+depois faremos que nossas classes implementem essa interface, veja:
+
+Lembrando que esse exempo de programa é em PHP:
+
+
+//////////////////////////////////////////////////////////////////////
+<?php
+
+interface Aves
+{
+    public function setLocalizacao($longitude, $latitude);
+    public function setAltitude($altitude);
+    public function renderizar();
+}
+
+class Papagaio implements Aves
+{
+    public function setLocalizacao($longitude, $latitude)
+    {
+        //Faz alguma coisa
+    }
+    
+    public function setAltitude($altitude)
+    {
+        //Faz alguma coisa   
+    }
+    
+    public function renderizar()
+    {
+        //Faz alguma coisa
+    }
+}
+
+class Pinguim implements Aves
+{
+    public function setLocalizacao($longitude, $latitude)
+    {
+        //Faz alguma coisa
+    }
+    
+    // A Interface Aves está forçando a Classe Pinguim a implementar esse método.
+    // Isso viola o príncipio ISP
+    public function setAltitude($altitude)
+    {
+        //Não faz nada...  Pinguins são aves que não voam!
+    }
+    
+    public function renderizar()
+    {
+        //Faz alguma coisa
+    }
+}
+
+////////////////////////////////////////////////////////////////////////
+
+Percebam que ao criar a interface Aves, atribuímos comportamentos genéricos 
+e isso acabou forçando a classe Pinguim a implementar o método setAltitude()
+do qual ela não deveria ter, pois pinguins não voam! Dessa forma, estamos 
+violando o Interface Segregation Principle — E o LSP também!
+
+Para resolver esse problema, devemos criar interfaces mais específicas, veja:
+
+Em PHP -
+
+//////////////////////////////////////////////////////////////////////////
+
+<?php
+
+interface Aves
+{
+    public function setLocalizacao($longitude, $latitude);
+    public function renderizar();
+}
+
+interface AvesQueVoam extends Aves
+{
+    public function setAltitude($altitude);
+}
+
+class Papagaio implements AvesQueVoam
+{
+    public function setLocalizacao($longitude, $latitude)
+    {
+        //Faz alguma coisa
+    }
+    
+    public function setAltitude($altitude)
+    {
+        //Faz alguma coisa   
+    }
+    
+    public function renderizar()
+    {
+        //Faz alguma coisa
+    }
+}
+
+class Pinguim implements Aves
+{
+    public function setLocalizacao($longitude, $latitude)
+    {
+        //Faz alguma coisa
+    }
+    
+    public function renderizar()
+    {
+        //Faz alguma coisa
+    }
+}
+
+/////////////////////////////////////////////////////////////////////////
+
+No exemplo acima, retiramos o método setAltitude() da interface Aves e 
+adicionamos em uma interface derivada AvesQueVoam. Isso nos permitiu 
+isolar os comportamentos das aves de maneira correta dentro do jogo, 
+respeitando o princípio da segregação das interfaces.
+
+Poderíamos melhorar ainda mais esse exemplo, criando uma interface 
+Renderizavel pra abstrair esse comportamento, mas o foco aqui é explicar 
+o conceito e não desenvolver o game, então vamos para o próximo princípio.
+
+
