@@ -1,0 +1,116 @@
+                O java.util.Calendar
+
+Já na JDK 1.1 foi observada a necessidade de facilitar alguns recursos que a 
+class Date oferecia.
+
+Sendo assim, a classe Calendar foi criada. Com isso uma série de métodos e
+construtores da classe Date foi depreciada. Por exemplo o construtor Date
+(int year, int month, int date).
+
+Calendar é uma classe abstrata que provê métodos para converter data entre um 
+instante específico.
+
+O Calendar possui alguns campos específicos para manipulação como MONTH, YEAR, 
+HOUR etc. 
+
+Capturando o instante atual com Calendar:
+
+import java.util.Calendar;
+
+/**
+ *  Exemplo de utilização da classe Calendar
+ */
+public class Exemplo005 {
+    public static void main(String[] args) {
+
+        Calendar agora = Calendar.getInstance();
+
+        System.out.println(agora);
+
+    }
+
+}
+
+
+Manipulando datas:
+
+import java.util.Calendar;
+
+/**
+ *  Exemplo de utilização da classe Calendar
+ */
+public class Exemplo006 {
+    public static void main(String[] args) {
+
+        Calendar agora = Calendar.getInstance();
+
+        System.out.println("A data corrente é : " + agora.getTime());
+        // A data corrente é : Sun Jul 14 20:50:31 BRT 2019
+
+        agora.add(Calendar.DATE, -15);
+        System.out.println("15 dias atrás: " + agora.getTime());
+        // 15 dias atrás: Sat Jun 29 20:50:31 BRT 2019
+
+        agora.add(Calendar.MONTH, 4);
+        System.out.println("4 meses depois: " + agora.getTime());
+        // 4 meses depois: Tue Oct 29 20:50:31 BRT 2019
+
+        agora.add(Calendar.YEAR, 2);
+        System.out.println("2 anos depois: " + agora.getTime());
+        // 2 anos depois: Fri Oct 29 20:50:31 BRT 2021
+
+    }
+}
+
+                    Imprimindo datas e horas
+
+Aqui vão algumas maneiras de se converter o resultado de um objeto Calendar:
+
+
+import java.util.Calendar;
+
+/**
+ *  Algumas conversões de data
+ */
+
+public class Exemplo007 {
+    public static void main(String[] args) {
+
+        Calendar agora = Calendar.getInstance();
+
+        System.out.printf("%tc\n", agora);
+        //Dom jul 14 20:58:11 BRT 2019
+
+        System.out.printf("%tF\n", agora);
+        //2019-07-14
+
+        System.out.printf("%tD\n", agora);
+        //07/14/19
+
+        System.out.printf("%tr\n", agora);
+        //08:58:11 PM
+
+        System.out.printf("%tT\n", agora);
+        //20:58:11
+
+    }
+}
+
+                        Exercício final
+
+Um cliente tem 10 dias para pagar uma fatura após sua data de vencimento sem 
+que os juros sejam cobrados.
+
+Caso essa data caia em um sábado ou domingo, o cliente pode pagar na segunda-
+feira seguinte.
+
+Crie uma estrutura que receba uma data de vencimento e calcule quantos dias ele
+tem para pagar. 
+
+                    Leia mais sobre...
+                    
+https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html
+
+https://www.javatpoint.com/java-util-calendar
+
+https://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html
