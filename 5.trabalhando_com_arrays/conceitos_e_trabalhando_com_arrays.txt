@@ -67,7 +67,7 @@ public class MyClass {
     }
 }
 
-                    Arra multidimensionais
+                    Arrays multidimensionais
 
 - Um array multidimensional é um array contendo um ou mais arrays internos;
 
