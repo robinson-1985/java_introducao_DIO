@@ -1,0 +1,91 @@
+                O que é um array?
+
+- Array ou matriz, é uma estrutura de dados que nos permite organizar valores 
+na memória;
+
+- Fazem parte da biblioteca java.util que é nativa do Java;
+
+- Armazenam elementos do mesmo tipo;
+
+- Podem ser unidimensionais ou multidimensionais.
+
+- Cada item em um array é chamado de elemento;
+
+- Cada elemento é acessado pela posição numérica(index);
+
+- O index inicia a partir de 0;
+
+- Ao se declarar um array, todos index são iniciados em 0;
+
+- Arrays não podem mudar de tamanho, a partir do momento que um array foi criado, 
+ele não pode mudar de tamanho;
+
+- Se você precisar de mais espaço, será necessário criar um novo array e, antes 
+de ser fererir a ele, copie os elementos do array velho. 
+
+
+                        Declaração de Arrays
+
+- Utilizando o operador "new"
+
+dataType[] arrayName = new dataType[arraySize];
+
+int meuArray= new int[7];
+
+
+- Outra forma
+
+dataType[] arrayName = {value0, value1, ..., valueN};
+
+int meuArray = {12,32,54,6,8,89,64};
+
+- Para alterar o valor de um elemento específico, coloque o index desse elemento 
+
+meuArray[0] = 50;
+
+                        Comprimento do Array
+
+- Para descobrirmos quantos elementos um array possui, use a propriedade length
+
+System.out.println(meuArray.length);
+
+                        Percorrendo Arrays
+
+- para processar um array, devemos usar um laço de repetição (for, for each, etc)
+
+Utilizaremos o for como exemplo!
+
+- Utilizamos uma variável de controle (contador), que vai de 0 até o número de 
+posições do array;
+
+public class MyClass {
+    public static void main(String[] args) {
+        int[] meuArray = {12,32,54,6,8,89,64};
+        for(int i=0; i<7; i++){
+            System.out.println(meuArray[i]);
+        }
+    }
+}
+
+                    Arra multidimensionais
+
+- Um array multidimensional é um array contendo um ou mais arrays internos;
+
+Exemplo de array bidimensional:
+
+int[][] meuArrayMulti = {{1,2,3,4}, {5,6,7}};
+
+meuArrayMulti é um array com dois arrays como seus elementos.
+
+- Processando um array multidimensional
+
+public class MyClass {
+    public static void main(String[] args) {
+        int[][] meuArrayMulti = {{1,2,3,4}, {5,6,7}};
+        for(int i=0; i<meuArrayMulti.length; ++i){
+            for(int j=0; j<meuArrayMulti.length; ++j){
+                System.out.println(meuArrayMulti[i][j]);
+            }    
+        }
+    }
+}
